@@ -200,9 +200,11 @@
             Z=elements[symbol]['Z'];
 
             while (true) {
+                console.log(`${symbol}-${A}`);
                 if (elements[symbol]['stable'].indexOf(A)>=0) {
                     console.log(decayChain);
-                    break;
+                    // break;
+                    return;
                 }
                 B1=B(A-4,Z-2); // alpha decay
                 B2=B(A,Z-1); // beta-plus decay
