@@ -190,7 +190,7 @@
             var isotope = document.getElementById('isotope').value;
             var symbol,A,Z;
             var B1,B2,B3;
-            var decayChain;
+            var decayChain=[];
             if (isotope[0]+isotope[1] in elements) {
                 symbol=isotope[0]+isotope[1];
             } else if (isotope[0] in elements) {
