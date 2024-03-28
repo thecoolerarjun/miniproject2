@@ -205,6 +205,7 @@
                     break;
                 }
                 B1=B(A-4,Z-2); // alpha decay
+                if (Z<83) B1=-Infinity;
                 B2=B(A,Z-1); // beta-plus decay
                 B3=B(A,Z+1); // beta-minus decay
                 if (Math.max(B1,B2,B3)==B1) {
