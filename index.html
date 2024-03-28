@@ -200,28 +200,29 @@
             Z=elements[symbol]['Z'];
 
             var end=false;
-            while (!end) {
-                console.log(`${symbol}-${A}`);
-                if (elements[symbol]['stable'].indexOf(A)>=0) {
-                    console.log(decayChain);
-                    end=true;
-                } else {
-                    B1=B(A-4,Z-2); // alpha decay
-                    B2=B(A,Z-1); // beta-plus decay
-                    B3=B(A,Z+1); // beta-minus decay
-                    if (Math.max(B1,B2,B3)==B1) {
-                        decayChain.push('α');
-                        A-=4;Z-=2;
-                    } else if (Math.max(B1,B2,B3)==B2) {
-                        decayChain.push('β⁺');
-                        Z-=1;
-                    } else if (Math.max(B1,B2,B3)==B3) {
-                        decayChain.push('β⁻');
-                        Z+=1;
-                    }
-                    symbol=Object.keys(elements)[Z-1];
-                }
-            }
+            console.log(elements[symbol]['stable'].indexOf(A)>=0);
+            // while (!end) {
+            //     console.log(`${symbol}-${A}`);
+            //     if (elements[symbol]['stable'].indexOf(A)>=0) {
+            //         console.log(decayChain);
+            //         end=true;
+            //     } else {
+            //         B1=B(A-4,Z-2); // alpha decay
+            //         B2=B(A,Z-1); // beta-plus decay
+            //         B3=B(A,Z+1); // beta-minus decay
+            //         if (Math.max(B1,B2,B3)==B1) {
+            //             decayChain.push('α');
+            //             A-=4;Z-=2;
+            //         } else if (Math.max(B1,B2,B3)==B2) {
+            //             decayChain.push('β⁺');
+            //             Z-=1;
+            //         } else if (Math.max(B1,B2,B3)==B3) {
+            //             decayChain.push('β⁻');
+            //             Z+=1;
+            //         }
+            //         symbol=Object.keys(elements)[Z-1];
+            //     }
+            // }
         }
 
         document.getElementById('submit').addEventListener('click', () => createDecayChain());
